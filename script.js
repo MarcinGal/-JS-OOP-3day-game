@@ -1,9 +1,9 @@
 function Game() {
     this.initialBoardArr = [
         [1, 1, 1, 1],
-        [0, 0, 0, 0],
-        [0, 1, 0, 0],
-        [0, 0, 0, 1],
+        [1, 0, 1, 0],
+        [1, 1, 1, 0],
+        [1, 0, 0, 1],
     ]
     this.boardArr = null;
     this.playerPosition = {
@@ -63,6 +63,19 @@ Game.prototype.startListeningToArrow = function () {
                 case 'ArrowUp':
                     event.preventDefault();
                     this.checkIfMoveIsAvailable(0, -1);
+                    break;
+                case 'ArrowDown':
+                    event.preventDefault();
+                    this.checkIfMoveIsAvailable(0, 1);
+                    break;
+                    case 'ArrowLeft':
+                    event.preventDefault();
+                    this.checkIfMoveIsAvailable(-1, 0);
+                    break;
+                    case 'ArrowRight':
+                    event.preventDefault();
+                    this.checkIfMoveIsAvailable(1, 0);
+                    break;
             }
         }
     )
