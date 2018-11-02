@@ -1,10 +1,13 @@
 function Game() {
-    this.initialBoardArr = [
-        [1, 1, 1, 1],
-        [1, 0, 1, 0],
-        [1, 1, 1, 0],
-        [1, 0, 0, 1],
-    ]
+    this.initialBoardArr = (
+        Array(20)
+        .fill(1)
+        .map(el => 
+            (Array(20)
+            .fill(1)
+            .map(el => Math.round(Math.random() * 1.50) )
+        ))
+    )
     this.boardArr = null;
     this.playerPosition = {
         x: 0,
